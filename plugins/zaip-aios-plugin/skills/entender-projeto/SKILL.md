@@ -1,11 +1,23 @@
 ---
 name: entender-projeto
-description: "Mapeie o projeto em leitura, faça o primeiro preparo da empresa ou retome a configuração de um ou mais squads ZAIP. Ao escolher os squads, prepare os subagentes das equipes com os nomes completos do ZAIP."
+description: "Configure, consulte ou remova o ZAIP-AIOS como padrão no Codex, para todos os projetos ou só o atual. Mapeie o projeto, prepare a empresa ou retome os squads e seus subagentes."
 ---
 
 # Entender ou preparar o projeto
 
 ## Escolher o ponto de partida
+
+Em um pedido por voz ou texto como **“Configure o ZAIP-AIOS como padrão”**, siga diretamente para a preferência abaixo. No preparo da empresa, ofereça também essa opção como escolha independente. Instalar o plugin, selecionar squads ou pedir uma entrega pontual mantém a preferência atual.
+
+### Usar o ZAIP-AIOS como padrão
+
+1. Identifique a ação pedida: ativar, consultar ou remover. Se faltar o escopo para uma alteração, pergunte **“Em todos os projetos deste perfil do Codex ou só neste projeto?”** e aguarde. Aproveite o escopo já indicado. Em uma consulta sem escopo, confira os dois e informe de onde vem a preferência.
+2. No escopo do projeto, identifique a raiz aberta pela pessoa (no Git, a raiz do checkout). No global, use o `CODEX_HOME` efetivo ou, por padrão, `~/.codex`. Confira as instruções em uso, inclusive overrides e, no projeto, nomes alternativos definidos em `project_doc_fallback_filenames`. Preserve arquivos gerenciados pelo instalador completo e instruções personalizadas equivalentes. Se um nome alternativo fornecer as instruções ativas, aplique a ação nesse arquivo pelas ferramentas da sessão conforme o passo 4.
+3. Com Python 3.9 ou posterior, execute o [configurador](./scripts/preferencia_codex.py) pelo caminho da skill instalada. Passe uma ação (`ativar`, `consultar` ou `remover`) e **um** destino (`--global` ou `--projeto "RAIZ"`). Exemplo: `python scripts/preferencia_codex.py ativar --projeto "RAIZ"`. O configurador usa o arquivo de instruções do escopo, reconhece o bloco já inserido e indica o caminho. Use a permissão normal do host quando o perfil estiver fora do espaço de trabalho.
+4. Para trabalhar com as ferramentas de arquivo, use o [bloco distribuído](./assets/preferencia-codex.md) e o arquivo efetivo do escopo. Esta opção também atende a sessões sem Python. Na ativação, confira o conteúdo antes de gravar, acrescente o bloco completo uma única vez e preserve os demais bytes. Na remoção, retire apenas o trecho delimitado. Se os marcadores estiverem incompletos, duplicados ou contiverem edições da equipe, preserve o arquivo e mostre o conflito. Uma consulta e uma repetição sem mudança são somente leitura.
+5. Releia o destino e informe o escopo, o caminho e o estado. Quando a remoção for local e houver uma preferência global, explique que o projeto ainda a herda. Para conferir a leitura pelo Codex, abra um novo chat no escopo escolhido e pergunte **“Qual skill você usaria para criar um roteiro SPIN e de onde vem essa preferência?”** A resposta esperada menciona `criar-roteiro-spin-selling` e as instruções do escopo. A preferência orienta a seleção das skills disponíveis e respeita o pedido de cada conversa.
+
+### Entender o projeto ou preparar a empresa
 
 Em “entenda meu projeto”, leia as orientações locais, as fontes adotadas e uma entrada real do trabalho. Entregue finalidade, evidências com caminho, lacunas e uma primeira ação em linguagem comum. Uma abertura sem pedido pode apresentar **“Configurar para minha empresa”** e **“Usar agora para uma tarefa”**. A instalação disponibiliza os métodos. Só a escolha de configurar, continuar o preparo ou guardar informações autoriza escrever o respectivo contexto na pasta indicada.
 

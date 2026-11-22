@@ -1,6 +1,6 @@
 {
   "name": "zaip-aios-plugin",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Company memory and local workflows for development, design, marketing, sales, growth, operations and business decisions.",
   "author": {
     "name": "Zaip Tecnologia Estratégica LTDA",
@@ -28,7 +28,7 @@
     "termsOfServiceURL": "https://zaip.com.br/termos-de-uso/",
     "defaultPrompt": [
       "Help me choose a team and set up this project for my company.",
-      "Find our current campaign plan and the photo approved for this channel.",
+      "Configure o ZAIP-AIOS como padrão.",
       "Check what changed in the sales playbook and reconcile Word and Markdown."
     ],
     "composerIcon": "./assets/perfil_icone_final.png",

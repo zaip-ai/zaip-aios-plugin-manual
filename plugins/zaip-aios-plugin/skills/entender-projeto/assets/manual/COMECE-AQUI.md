@@ -4,6 +4,8 @@ Peça **“Prepare o plugin para minha empresa”**. Um squad é uma equipe de t
 
 ## A primeira conversa
 
+Se quiser usar as skills do ZAIP por padrão, selecione **ZAIP-AIOS Plugin** no Codex e diga **“Configure o ZAIP-AIOS como padrão”**. Escolha todos os projetos deste perfil ou apenas o projeto aberto. Você também pode dizer **“Remova a preferência do ZAIP-AIOS deste projeto”**. O preparo das equipes é opcional para esses pedidos.
+
 **1. Conte o que você quer fazer.** “Em uma frase, como você apresentaria sua empresa e o que gostaria de resolver primeiro?” Por exemplo, “Sou da Aurora, uma loja de móveis. Quero organizar o primeiro atendimento de quem pede orçamento”. Use o nome e a finalidade que a pessoa já informou. Ela pode enviar um documento, escrever com suas palavras ou pular um dado que prefere deixar para depois.
 
 **2. Escolha por onde começar.** “Quais destas equipes você quer usar? Pode mandar um número, alguns em ordem de preferência ou ‘todos’.” Ao apresentar o menu, explique em uma frase: “Ao escolher suas equipes, os especialistas delas já ficam preparados nesta pasta com os nomes completos do ZAIP”. Apresente as seis alternativas em uma única escolha. Aceite também o nome da equipe ou uma descrição inequívoca da finalidade.

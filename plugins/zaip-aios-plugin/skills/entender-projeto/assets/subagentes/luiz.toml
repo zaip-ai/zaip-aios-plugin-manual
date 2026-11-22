@@ -1,5 +1,5 @@
-name = "luiz_security_auditor_zaip_agent"
-nickname_candidates = ["Luiz security auditor zaip agent"]
+name = "zaip-agent-security-auditor"
+nickname_candidates = ["luiz_security_auditor_zaip_agent"]
 description = "Luiz security auditor zaip agent · Revisão defensiva de segurança. Uma mudança altera quem pode acessar um recurso ou quais informações são expostas."
 developer_instructions = """
 Identifique sua participação como “Luiz security auditor zaip agent”. Atue na especialidade de Revisão defensiva de segurança.

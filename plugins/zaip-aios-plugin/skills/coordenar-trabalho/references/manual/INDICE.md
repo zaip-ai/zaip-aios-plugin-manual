@@ -71,33 +71,33 @@ A primeira coluna traz o nome pelo qual a equipe chama cada especialista. No Cod
 
 ## Nomes completos das delegações
 
-Escolha a especialidade pelo pedido. O identificador completo vai no campo de nome da tarefa (`task_name`). O Codex local também pode carregá-lo como tipo de agente a partir do respectivo TOML. A mensagem de delegação contém a tarefa concreta.
+Selecione o papel da coluna `agent_type` e envie o `task_name` da mesma linha quando a ferramenta aceitar esse campo. Em cada TOML, `name` contém o papel e `nickname_candidates` contém apenas o nome da tarefa. A primeira coluna mostra a grafia para a pessoa. Descreva a atividade na mensagem de delegação.
 
-| Nome completo | Identificador |
-| --- | --- |
-| Dave product owner zaip agent | `dave_product_owner_zaip_agent` |
-| Rafa tech lead zaip agent | `rafa_tech_lead_zaip_agent` |
-| Leo software engineer zaip agent | `leo_software_engineer_zaip_agent` |
-| Bia product manager zaip agent | `bia_product_manager_zaip_agent` |
-| Gui quality assurance lead zaip agent | `gui_quality_assurance_lead_zaip_agent` |
-| Nanda principal engineer zaip agent | `nanda_principal_engineer_zaip_agent` |
-| Dani integration engineer zaip agent | `dani_integration_engineer_zaip_agent` |
-| Ana quality auditor zaip agent | `ana_quality_auditor_zaip_agent` |
-| Lia technical writer zaip agent | `lia_technical_writer_zaip_agent` |
-| Gabi data analyst zaip agent | `gabi_data_analyst_zaip_agent` |
-| Tati refactoring specialist zaip agent | `tati_refactoring_specialist_zaip_agent` |
-| Doug frontend specialist zaip agent | `doug_frontend_specialist_zaip_agent` |
-| Will backend specialist zaip agent | `will_backend_specialist_zaip_agent` |
-| Jonny website developer zaip agent | `jonny_website_developer_zaip_agent` |
-| Manu product designer zaip agent | `manu_product_designer_zaip_agent` |
-| Dan cloud engineer zaip agent | `dan_cloud_engineer_zaip_agent` |
-| Luiz security auditor zaip agent | `luiz_security_auditor_zaip_agent` |
-| Lucia marketing analyst zaip agent | `lucia_marketing_analyst_zaip_agent` |
-| Sarah branding specialist zaip agent | `sarah_branding_specialist_zaip_agent` |
-| Robert growth strategist zaip agent | `robert_growth_strategist_zaip_agent` |
-| Aaron sales specialist zaip agent | `aaron_sales_specialist_zaip_agent` |
-| Clara operations generalist zaip agent | `clara_operations_generalist_zaip_agent` |
-| Renata governance compliance specialist zaip agent | `renata_governance_compliance_specialist_zaip_agent` |
+| Nome completo | Papel no Codex (`agent_type`) | Nome da tarefa (`task_name`) |
+| --- | --- | --- |
+| Dave product owner zaip agent | `zaip-agent-orchestrator` | `dave_product_owner_zaip_agent` |
+| Rafa tech lead zaip agent | `zaip-agent-builder` | `rafa_tech_lead_zaip_agent` |
+| Leo software engineer zaip agent | `zaip-agent-task-executor` | `leo_software_engineer_zaip_agent` |
+| Bia product manager zaip agent | `zaip-agent-analyst` | `bia_product_manager_zaip_agent` |
+| Gui quality assurance lead zaip agent | `zaip-agent-finalizer` | `gui_quality_assurance_lead_zaip_agent` |
+| Nanda principal engineer zaip agent | `zaip-agent-reviewer` | `nanda_principal_engineer_zaip_agent` |
+| Dani integration engineer zaip agent | `zaip-agent-integrator` | `dani_integration_engineer_zaip_agent` |
+| Ana quality auditor zaip agent | `zaip-agent-auditor` | `ana_quality_auditor_zaip_agent` |
+| Lia technical writer zaip agent | `zaip-agent-writer` | `lia_technical_writer_zaip_agent` |
+| Gabi data analyst zaip agent | `zaip-agent-data-analyst` | `gabi_data_analyst_zaip_agent` |
+| Tati refactoring specialist zaip agent | `zaip-agent-refactoring-specialist` | `tati_refactoring_specialist_zaip_agent` |
+| Doug frontend specialist zaip agent | `zaip-agent-frontend` | `doug_frontend_specialist_zaip_agent` |
+| Will backend specialist zaip agent | `zaip-agent-backend` | `will_backend_specialist_zaip_agent` |
+| Jonny website developer zaip agent | `zaip-agent-website-developer` | `jonny_website_developer_zaip_agent` |
+| Manu product designer zaip agent | `zaip-agent-designer` | `manu_product_designer_zaip_agent` |
+| Dan cloud engineer zaip agent | `zaip-agent-cloud-engineer` | `dan_cloud_engineer_zaip_agent` |
+| Luiz security auditor zaip agent | `zaip-agent-security-auditor` | `luiz_security_auditor_zaip_agent` |
+| Lucia marketing analyst zaip agent | `zaip-agent-marketing-analyst` | `lucia_marketing_analyst_zaip_agent` |
+| Sarah branding specialist zaip agent | `zaip-agent-brand-strategist` | `sarah_branding_specialist_zaip_agent` |
+| Robert growth strategist zaip agent | `zaip-agent-growth-strategist` | `robert_growth_strategist_zaip_agent` |
+| Aaron sales specialist zaip agent | `zaip-agent-sales-specialist` | `aaron_sales_specialist_zaip_agent` |
+| Clara operations generalist zaip agent | `zaip-agent-general-operations` | `clara_operations_generalist_zaip_agent` |
+| Renata governance compliance specialist zaip agent | `zaip-agent-governance-compliance` | `renata_governance_compliance_specialist_zaip_agent` |
 
 ## Trabalhos entre áreas
 

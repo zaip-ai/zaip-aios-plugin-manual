@@ -7,6 +7,7 @@ import re
 import stat
 import sys
 import tempfile
+import time
 
 try:
     import tomllib
@@ -40,11 +41,12 @@ def carregar_modelos(escolhas, disponiveis):
             origem = re.search(r"^\*\*Função de origem\*\* `([a-z]+(?:_[a-z]+)*)`[ \t]*$", ficha_perfil, re.M)
             if not origem or not ficha_perfil.startswith(f"# {nome} · "):
                 raise ValueError(f"Ficha de especialista inconsistente: {perfil}")
-            rotulo = f"{nome} {origem[1].replace('_', ' ')} zaip agent"
+            tarefa = f"{nome.lower()}_{origem[1]}_zaip_agent"
+            papel = "zaip-agent-writer" if perfil == "agent-text-summarizer" else f"zaip-{perfil}"
             arquivo = nome.lower() + ".toml"
             conteudo = (ASSETS / "subagentes" / arquivo).read_bytes()
             modelo = tomllib.loads(conteudo.decode("utf-8"))
-            if modelo.get("name") != rotulo.lower().replace(" ", "_") or modelo.get("nickname_candidates") != [rotulo]:
+            if modelo.get("name") != papel or modelo.get("nickname_candidates") != [tarefa]:
                 raise ValueError(f"O modelo {arquivo} difere da identidade do catálogo.")
             perfis[perfil] = (arquivo, conteudo, modelo)
     return perfis.values()
@@ -103,7 +105,9 @@ def preparar_destino(projeto):
     return destino
 
 
-def ja_configurado(pasta, arquivo, esperado):
+def perfil_local(pasta, arquivo, esperado, anterior):
+    tarefa = esperado["nickname_candidates"][0]
+    rotulo = tarefa.replace("_", " ").capitalize()
     encontrados = []
     for caminho in pasta.iterdir():
         if caminho.suffix.lower() != ".toml":
@@ -117,24 +121,37 @@ def ja_configurado(pasta, arquivo, esperado):
                 raise ValueError(f"O destino {caminho.name} não é um arquivo regular.")
             continue
         try:
-            atual = tomllib.loads(caminho.read_text(encoding="utf-8-sig"))
+            texto = caminho.read_text(encoding="utf-8-sig")
+            atual = tomllib.loads(texto)
         except (UnicodeDecodeError, tomllib.TOMLDecodeError):
             if mesmo_arquivo:
                 raise ValueError(f"O arquivo existente {caminho.name} não pôde ser interpretado.")
             continue
         nome = atual.get("name")
-        if mesmo_arquivo or (isinstance(nome, str) and nome.casefold() == esperado["name"].casefold()):
-            if atual != esperado:
+        apelidos = atual.get("nickname_candidates", [])
+        mesmo_nome = isinstance(nome, str) and nome.casefold() in (esperado["name"], tarefa)
+        mesmo_apelido = isinstance(apelidos, list) and any(
+            isinstance(valor, str) and valor.casefold() in (tarefa, rotulo.casefold()) for valor in apelidos
+        )
+        if mesmo_arquivo or mesmo_nome or mesmo_apelido:
+            if atual != esperado and texto != anterior:
                 raise ValueError(f"O perfil local em {caminho.name} usa esta identidade ou destino com outra configuração.")
-            encontrados.append(caminho.name)
+            encontrados.append((caminho, texto == anterior))
     if len(encontrados) > 1:
-        raise ValueError(f"A identidade aparece em mais de um perfil: {', '.join(encontrados)}")
-    return bool(encontrados)
+        raise ValueError(f"A identidade aparece em mais de um perfil: {', '.join(c.name for c, _ in encontrados)}")
+    return encontrados[0] if encontrados else (None, False)
 
 
 def instalar(pasta, arquivo, conteudo, modelo):
+    # A 1.0.6 usava o nome da tarefa como papel e o rótulo legível como apelido.
+    # Compare todo o texto para conservar inclusive comentários de perfis personalizados.
+    tarefa = modelo["nickname_candidates"][0]
+    rotulo = tarefa.replace("_", " ").capitalize()
+    corpo = conteudo.decode("utf-8").replace("\r\n", "\n").split("\n", 2)[2]
+    anterior = f'name = "{tarefa}"\nnickname_candidates = ["{rotulo}"]\n{corpo}'
     conferir_diretorio(pasta)
-    if ja_configurado(pasta, arquivo, modelo):
+    destino, desatualizado = perfil_local(pasta, arquivo, modelo, anterior)
+    if destino is not None and not desatualizado:
         return "reutilizados"
     saida = tempfile.NamedTemporaryFile(dir=pasta, suffix=".tmp", delete=False)
     temporario = Path(saida.name)
@@ -142,24 +159,49 @@ def instalar(pasta, arquivo, conteudo, modelo):
         with saida:
             saida.write(conteudo)
         conferir_diretorio(pasta)
-        if ja_configurado(pasta, arquivo, modelo):
-            return "reutilizados"
-        destino = pasta / arquivo
-        try:
-            # Disponibilize o TOML inteiro de uma só vez e preserve um destino criado em paralelo.
-            if os.name == "nt":
-                os.rename(temporario, destino)
-            else:
-                os.link(temporario, destino)
-        except FileExistsError:
-            if ja_configurado(pasta, arquivo, modelo):
+        destino, desatualizado = perfil_local(pasta, arquivo, modelo, anterior)
+        if destino is not None:
+            if not desatualizado:
                 return "reutilizados"
-            raise
-        if not ja_configurado(pasta, arquivo, modelo):
+            if os.name != "nt":
+                temporario.chmod(stat.S_IMODE(destino.stat().st_mode))
+            confirmado = destino.read_text(encoding="utf-8-sig")
+            if confirmado != anterior:
+                if tomllib.loads(confirmado) == modelo:
+                    return "reutilizados"
+                raise ValueError(f"O perfil {destino.name} mudou durante a atualização.")
+            os.replace(temporario, destino)
+            estado = "atualizados"
+        else:
+            try:
+                # Disponibilize o TOML inteiro sem substituir um destino criado em paralelo.
+                if os.name == "nt":
+                    os.rename(temporario, pasta / arquivo)
+                else:
+                    os.link(temporario, pasta / arquivo)
+            except FileExistsError:
+                existente, desatualizado = perfil_local(pasta, arquivo, modelo, anterior)
+                if existente is not None and not desatualizado:
+                    return "reutilizados"
+                raise
+            estado = "criados"
+        existente, desatualizado = perfil_local(pasta, arquivo, modelo, anterior)
+        if existente is None or desatualizado:
             raise ValueError(f"Não foi possível confirmar {arquivo} após a cópia.")
-        return "criados"
+        return estado
     finally:
         temporario.unlink(missing_ok=True)
+
+
+def configurar(pasta, arquivo, conteudo, modelo):
+    for tentativa in range(5):
+        try:
+            return instalar(pasta, arquivo, conteudo, modelo)
+        except PermissionError:
+            # No Windows, abrir e trocar o TOML em dois processos pode dar acesso negado transitório.
+            if os.name != "nt" or tentativa == 4:
+                raise
+            time.sleep(0.03)
 
 
 def main():
@@ -168,21 +210,22 @@ def main():
     parser.add_argument("--projeto", required=True, type=Path)
     parser.add_argument("squads", nargs="+", choices=[*disponiveis, "todos"])
     args = parser.parse_args()
-    resultado = {"criados": [], "reutilizados": [], "pendentes": []}
+    resultado = {"criados": [], "atualizados": [], "reutilizados": [], "pendentes": []}
     try:
         modelos = carregar_modelos(args.squads, disponiveis)
         try:
             pasta = preparar_destino(args.projeto.absolute())
         except (OSError, ValueError) as erro:
             for _, _, modelo in modelos:
-                resultado["pendentes"].append({"nome": modelo["name"], "motivo": str(erro)})
+                resultado["pendentes"].append({"nome": modelo["nickname_candidates"][0], "motivo": str(erro)})
         else:
             for arquivo, conteudo, modelo in modelos:
+                tarefa = modelo["nickname_candidates"][0]
                 try:
-                    estado = instalar(pasta, arquivo, conteudo, modelo)
-                    resultado[estado].append(modelo["name"])
+                    estado = configurar(pasta, arquivo, conteudo, modelo)
+                    resultado[estado].append(tarefa)
                 except (OSError, ValueError) as erro:
-                    resultado["pendentes"].append({"nome": modelo["name"], "motivo": str(erro)})
+                    resultado["pendentes"].append({"nome": tarefa, "motivo": str(erro)})
     except (OSError, ValueError) as erro:
         resultado["erro"] = str(erro)
     print(json.dumps(resultado, ensure_ascii=True))

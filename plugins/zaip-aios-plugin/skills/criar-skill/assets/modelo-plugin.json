@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "briefing-local",
+  "version": "1.0.0",
+  "description": "Prepare a campaign brief from a local project.",
+  "extensions": {
+    "com.openai": {
+      "requires_local_executor": true,
+      "onboardingSkill": "./skills/preparar-briefing/SKILL.md"
+    }
+  }
+}

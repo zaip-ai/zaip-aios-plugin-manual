@@ -1,0 +1,100 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Catálogo de itens de exemplo",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/itens/{id}": {
+      "get": {
+        "operationId": "consultarItem",
+        "summary": "Consulta um item do catálogo de teste",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^item-[0-9]+$"
+            },
+            "example": "item-1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Item encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Item"
+                },
+                "example": {
+                  "id": "item-1",
+                  "nome": "Caderno"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Identificador em formato inválido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Erro"
+                },
+                "example": {
+                  "erro": "id_invalido"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Nenhum item com esse identificador",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Erro"
+                },
+                "example": {
+                  "erro": "item_ausente"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Item": {
+        "type": "object",
+        "required": [
+          "id",
+          "nome"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^item-[0-9]+$"
+          },
+          "nome": {
+            "type": "string"
+          }
+        }
+      },
+      "Erro": {
+        "type": "object",
+        "required": [
+          "erro"
+        ],
+        "properties": {
+          "erro": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

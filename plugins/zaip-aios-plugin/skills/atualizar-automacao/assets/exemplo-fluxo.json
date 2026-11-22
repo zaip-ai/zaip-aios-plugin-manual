@@ -1,0 +1,19 @@
+{
+  "gatilho": "Novo lead fictício aceito",
+  "destino": "CRM de teste",
+  "chave": "evento",
+  "confirmacao": "ID da nota consultado no CRM",
+  "falha": "Preservar pendência e consultar a chave antes de repetir",
+  "parada": "Encerrar ao confirmar a nota ou atingir o limite de tentativas",
+  "exemplos": [
+    {
+      "evento": "teste-1"
+    },
+    {
+      "evento": "teste-1"
+    },
+    {
+      "evento": "teste-2"
+    }
+  ]
+}

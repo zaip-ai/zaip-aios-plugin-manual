@@ -1,0 +1,20 @@
+{
+  "name": "zaip-manual",
+  "interface": {
+    "displayName": "ZAIP-AIOS Plugin"
+  },
+  "plugins": [
+    {
+      "name": "zaip-aios-plugin",
+      "source": {
+        "source": "local",
+        "path": "./plugins/zaip-aios-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

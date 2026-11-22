@@ -1,6 +1,6 @@
 # ZAIP-AIOS Plugin
 
-Plugin com 203 skills em português para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.0.7 usa os mesmos nomes dos 23 subagentes do ZAIP-AIOS. Por exemplo, uma revisão de engenharia aparece como **Nanda principal engineer zaip agent**.
+Plugin com 203 skills em português para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.0.8 usa os mesmos nomes dos 23 subagentes do ZAIP-AIOS. Por exemplo, uma revisão de engenharia aparece como **Nanda principal engineer zaip agent**.
 
 ## Instalar pelo agente
 

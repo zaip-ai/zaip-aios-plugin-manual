@@ -1,6 +1,6 @@
 # ZAIP-AIOS Plugin
 
-Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.0.10 adiciona o Design System Maker para extrair um DESIGN.md e um diagnóstico em PDF a partir de uma URL.
+Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.1.0 inclui o Design System Maker para extrair um DESIGN.md e um diagnóstico em PDF a partir de uma URL.
 
 ## Instalar pelo agente
 
@@ -26,7 +26,7 @@ codex plugin add zaip-aios-plugin@zaip-manual
 codex plugin list --marketplace zaip-manual --json
 ```
 
-Confira na listagem a versão `1.0.10` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
+Confira na listagem a versão `1.1.0` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
 
 Em um projeto já preparado, peça **“Atualize os subagentes das equipes que já escolhi.”** O plugin reconhece os perfis padrão da 1.0.6 e preserva os personalizados. Abra um novo chat na pasta do projeto para usar os nomes atualizados nas próximas delegações.
 

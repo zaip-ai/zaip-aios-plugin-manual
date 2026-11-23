@@ -1,4 +1,4 @@
-# Catálogo de tarefas da edição Free 1.0.10
+# Catálogo de tarefas da edição Free 1.1.0
 
 São 204 entradas. Diga o resultado que precisa. Para preparar a empresa, o [guia inicial](./COMECE-AQUI.md) ajuda a escolher a primeira equipe. Para reencontrar uma entrega, siga o [índice de materiais por área](./MEMORIA.md). As entradas de criação e atualização verificam se o alvo existe. Os especialistas aplicam o papel escolhido no mesmo chat.
 

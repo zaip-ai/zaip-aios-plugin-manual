@@ -23,4 +23,4 @@ Use as decisões da equipe e cite o arquivo ou material que as sustenta. Acresce
 
 ## Entrega pelo método ZAIP
 
-Delimite resultado, público, insumos, formato, escopo de escrita e critério de aceite. Se a fonte já responde, avance sem entrevista. Clara produz o procedimento, checklist, documento ou passagem com entradas, dono, passo, exceção e conclusão. Decisões de identidade vão a Manu ou Sarah; campanha a Lúcia; dados a Gabi. Confira o resultado pelo caminho do leitor. Registre decisões operacionais duráveis em `.agents/operations/memoria.md` e procedimentos vigentes em `.agents/operations/playbook.md` ou na fonte adotada.
+Delimite resultado, público, insumos, formato, escopo de escrita e critério de aceite. Se a fonte já responde, avance sem entrevista. Clara produz o procedimento, checklist, documento ou passagem com entradas, dono, passo, exceção e conclusão. Decisões de identidade vão a Manu ou Sarah; campanha a Lúcia; dados a Gabi. Confira o resultado pelo caminho do leitor. Quando uma decisão mudar um procedimento, atualize o trecho correspondente no playbook de operações ou na fonte adotada.

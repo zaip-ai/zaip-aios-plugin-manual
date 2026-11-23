@@ -21,4 +21,4 @@ Registre uma linha por equipe configurada, usando o ID do catálogo e a finalida
 
 Guarde o idioma, preferências, restrições e decisões transversais confirmadas. Associe cada uma à empresa e à fonte confiável. Segredos, dados individuais de clientes e transcrições privadas ficam fora deste documento.
 
-Siga `docs/zaip/memoria.md` para as fontes de cada assunto e o acervo reutilizável. A ficha humana correspondente é `docs/zaip/empresa.docx`. Confira o conteúdo de ambos ao retomar ou registrar uma mudança.
+Consulte a fonte vigente na pasta responsável pelo assunto. A ficha permanece em Markdown; se já existir um Word correspondente, confira e reconcilie seu conteúdo ao registrar uma mudança.

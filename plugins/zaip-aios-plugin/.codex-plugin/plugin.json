@@ -1,6 +1,6 @@
 {
   "name": "zaip-aios-plugin",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Company memory and local workflows for development, design, marketing, sales, growth, operations and business decisions.",
   "author": {
     "name": "Zaip Tecnologia Estratégica LTDA",
@@ -19,7 +19,7 @@
   "interface": {
     "displayName": "ZAIP-AIOS Plugin",
     "shortDescription": "Build, market and measure",
-    "longDescription": "Choose one of six teams to start with, or set up all six at your own pace. Selecting teams configures their named ZAIP subagents in your project. Keep company facts, current plans, reports and approved assets organized by area. Look up the original file and check its intended use. Reconcile Markdown and Word during a task and compare their content. Use 204 skills and 23 specialist perspectives to plan campaigns, measure growth, develop software and run operations with the connections available in your client.",
+    "longDescription": "Choose one of six teams to start with, or set up all six at your own pace. Selecting teams configures their named ZAIP subagents in your project. Get one-off plans in chat. Keep reusable decisions in the relevant area and choose Word for deliverables that need it. Reconcile existing document pairs when editing them. Use 204 skills and 23 specialist perspectives to plan campaigns, measure growth, develop software and run operations with the connections available in your client.",
     "developerName": "Zaip Tecnologia Estratégica LTDA",
     "category": "Productivity",
     "websiteURL": "https://zaip.com.br",

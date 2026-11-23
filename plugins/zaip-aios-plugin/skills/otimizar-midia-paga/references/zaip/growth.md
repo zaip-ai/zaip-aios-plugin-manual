@@ -1,6 +1,6 @@
 # Growth e RevOps
 
-Robert orienta a decisão e Gabi verifica a base quantitativa. Consulte `.agents/growth/memoria.md` e a estratégia vigente. Use `.agents/growth/strategy.md` para a decisão consolidada e arquivos próprios para experimentos e planos.
+Robert orienta a decisão e Gabi verifica a base quantitativa. Consulte a estratégia de growth vigente quando disponível. Use `.agents/growth/strategy.md` para a decisão consolidada quando ela precisar ser retomada em outras tarefas.
 
 ## Perguntas que mudam a decisão
 

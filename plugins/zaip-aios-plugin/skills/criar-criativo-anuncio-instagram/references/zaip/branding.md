@@ -1,6 +1,6 @@
 # Branding e Brandbook
 
-Sarah governa a marca. Leia `.agents/branding/memoria.md` e as fontes vigentes. Para um Brandbook consolidado, use o [modelo comentado por item](./itens-brandbook.md). Ele descreve o que escrever em cada item e como sustentar a afirmação.
+Sarah governa a marca. Consulte as fontes de marca adotadas pela equipe. Para um Brandbook consolidado, use o [modelo comentado por item](./itens-brandbook.md). Ele descreve o que escrever em cada item e como sustentar a afirmação.
 
 ## Perguntas que mudam a decisão
 
@@ -16,7 +16,7 @@ Salve plataformas de marca, Brandbooks, decisões de identidade, arquétipos, es
 
 Há dois artefatos distintos:
 
-- A plataforma de marca progressiva é a base estratégica em Markdown, normalmente `.agents/branding/brand-platform.md`. Ela registra a descoberta e as decisões de propósito, posicionamento, arquitetura e identidade à medida que amadurecem. A metodologia permite a plataforma em Markdown. Nesta edição, quando salva para a equipe, ela também recebe um Word de trabalho sincronizado. Essa cópia não a transforma em Brandbook aprovado.
+- A plataforma de marca progressiva é a base estratégica em Markdown, normalmente `.agents/branding/brand-platform.md`. Ela registra a descoberta e as decisões de propósito, posicionamento, arquitetura e identidade à medida que amadurecem. A plataforma pode permanecer em Markdown; produza Word se for apropriado à entrega ou solicitado e sincronize um par existente. Essa cópia não a transforma em Brandbook aprovado.
 - O Brandbook consolidado é o artefato oficial, completo e versionado. Sua fonte canônica é `.agents/branding/brandbook.md` e a versão Word correspondente é `.agents/branding/brandbook.docx`. Todo Brandbook salvo como `.docx` deve ter, na mesma pasta e com o mesmo nome-base, uma fonte `.md` estrategicamente equivalente; mantenha os dois sincronizados a cada revisão.
 
 ## Descoberta antes da consolidação

@@ -1,6 +1,6 @@
 # Stack de desenvolvimento ZAIP
 
-Leia `.agents/development/memoria.md`, o perfil escolhido em `.agents/development/stack.md` e a configuração existente da equipe. Abra o manifesto e o lockfile para distinguir referência, tecnologia adotada, versão instalada e serviço comprovadamente implantado.
+Consulte o perfil escolhido em `.agents/development/stack.md` e a configuração existente da equipe. Abra o manifesto e o lockfile para distinguir referência, tecnologia adotada, versão instalada e serviço comprovadamente implantado.
 
 ## Perfil para projetos novos
 

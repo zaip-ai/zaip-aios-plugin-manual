@@ -1,6 +1,6 @@
 # Arquitetura de software ZAIP
 
-Abra `.agents/architecture/memoria.md` e o documento principal `.agents/architecture/software-architecture.md` ou a fonte vigente identificada pela equipe. Preserve decisões, diferenças locais, histórico e a autoridade de arquivos gerenciados. Consulte o perfil de stack antes de escolher uma tecnologia.
+Consulte o documento principal `.agents/architecture/software-architecture.md` ou a fonte vigente identificada pela equipe. Preserve decisões, diferenças locais, histórico e a autoridade de arquivos gerenciados. Consulte o perfil de stack antes de escolher uma tecnologia.
 
 ## Descoberta e desenho
 

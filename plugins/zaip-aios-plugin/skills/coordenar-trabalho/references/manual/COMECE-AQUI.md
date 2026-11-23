@@ -42,7 +42,7 @@ Use os dados da empresa no exemplo. Identifique o que for hipótese. A sugestão
 
 ## Voltar ao projeto
 
-Em outro chat com acesso à mesma pasta, diga **“Continue a configuração”** ou **“Qual equipe falta preparar?”**. O agente consulta a ficha da empresa para encontrar a próxima equipe. Para retomar um trabalho, diga **“Busque o plano de vendas vigente”** ou **“Ache a foto aprovada do produto para esta campanha”**. O [índice de memória](./MEMORIA.md) leva à ficha da área e ao material. Pergunte pelo uso permitido quando ele estiver em aberto.
+Em outro chat com acesso à mesma pasta, diga **“Continue a configuração”** ou **“Qual equipe falta preparar?”**. O agente consulta a configuração existente das equipes para encontrar a próxima. Para retomar um trabalho, diga **“Busque o plano de vendas vigente”** ou **“Ache a foto aprovada do produto para esta campanha”**. O [mapa de fontes](./MEMORIA.md) ajuda a localizar o material na área pertinente. Pergunte pelo uso permitido quando ele estiver em aberto.
 
 ## Chamar o especialista pelo nome
 

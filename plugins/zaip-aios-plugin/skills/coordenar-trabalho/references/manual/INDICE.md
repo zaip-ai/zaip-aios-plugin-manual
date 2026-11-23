@@ -1,6 +1,6 @@
 # Manual de trabalho ZAIP-AIOS Free
 
-Consulte o [índice da memória por assunto](./MEMORIA.md) para abrir e atualizar a ficha da área no projeto.
+Localize a fonte vigente da área pelo [mapa por assunto](./MEMORIA.md).
 
 Para configurar a empresa, escolher o primeiro squad e receber uma primeira entrega, abra [Comece aqui](./COMECE-AQUI.md). A configuração pode continuar em outro chat com acesso à mesma pasta.
 
@@ -8,11 +8,11 @@ O [catálogo por tarefa](./CATALOGO.md) reúne as 203 entradas do plugin, inclui
 
 Use a entrega pedida para escolher uma área. Leia o respectivo guia e as decisões locais relevantes antes de começar. Para uma tarefa de uma só especialidade, basta esse percurso. Se a entrega cruza áreas, consulte o squad correspondente e combine insumo, decisão e próximo responsável. Um mesmo chat pode aplicar várias perspectivas. Atribua execução, revisão e aprovação somente a quem de fato participou.
 
-Consulte [Sincronizar os documentos](./PARES.md) quando a equipe editar o Word ou o agente alterar o Markdown.
+Consulte [Sincronizar os documentos](./PARES.md) quando houver um par existente ou necessário para a entrega.
 
 ## Guias e materiais do projeto
 
-O contexto adotado pela organização fica em `docs/zaip/empresa.md` no projeto preparado. A skill `coordenar-trabalho` escolhe um percurso quando o pedido envolve mais de uma especialidade. Para a primeira versão e as revisões de cada material, use as entradas de criação e atualização. Ambas conferem a existência e preservam a versão vigente.
+Consulte o contexto da organização nas fontes que a equipe já usa. A skill `coordenar-trabalho` escolhe um percurso quando o pedido envolve mais de uma especialidade. Para a primeira versão e as revisões de cada material, use as entradas de criação e atualização. Ambas conferem a existência e preservam a versão vigente.
 
 | Área | Primeiro documento | Exemplos de pedidos |
 | --- | --- | --- |
@@ -133,4 +133,4 @@ Cada perfil também pode ser acionado como uma skill pelo nome da pessoa e funç
 - **Produto com nova interface.** Comece pelo brief e pelo contrato de arquitetura. Use design para definir os estados, design system para os componentes e desenvolvimento para conferir o caminho implementado na stack do projeto.
 - **Operação com meta de crescimento.** Comece pelo playbook de operações, descreva quem recebe a passagem e use growth e dados para definir um experimento e sua regra de decisão.
 
-Quando houver um brandbook, DESIGN.md, playbook ou padrão técnico já adotado pelo projeto, siga a fonte identificada pela equipe. Os métodos distribuídos ficam no plugin. As decisões e os materiais vigentes pertencem à empresa. Preserve as personalizações das instalações anteriores. Dê a cada material durável uma referência na ficha da área. Mantenha propostas e decisões confirmadas identificáveis.
+Quando houver um brandbook, DESIGN.md, playbook ou padrão técnico já adotado pelo projeto, siga a fonte identificada pela equipe. Os métodos distribuídos ficam no plugin. As decisões e os materiais vigentes pertencem à empresa. Preserve as personalizações das instalações anteriores. Quando outra tarefa precisar de uma referência, aponte diretamente para o original. Mantenha propostas e decisões confirmadas identificáveis.

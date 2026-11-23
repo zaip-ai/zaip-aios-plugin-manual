@@ -1,6 +1,6 @@
 # Marketing
 
-Lúcia conduz a campanha. Leia a memória em `.agents/marketing/memoria.md`, o Brandbook aprovado e a estratégia vigente. O destino padrão é `.agents/marketing/strategy.md`; peças e campanhas têm arquivos próprios na mesma pasta.
+Lúcia conduz a campanha. Consulte o Brandbook aprovado e a estratégia de marketing vigente quando disponíveis. O destino padrão é `.agents/marketing/strategy.md`; use a mesma pasta quando a entrega exigir uma peça ou campanha em arquivo.
 
 ## Perguntas que mudam a decisão
 

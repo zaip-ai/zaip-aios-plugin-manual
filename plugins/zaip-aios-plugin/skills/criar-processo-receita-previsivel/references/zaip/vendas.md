@@ -1,6 +1,6 @@
 # Metodologia comercial
 
-Aaron conduz o processo. Abra `.agents/sales/memoria.md` e o playbook vigente. O padrão é `.agents/sales/playbook.md`. Scripts, matriz de objeções e regras de qualificação ficam junto dele.
+Aaron conduz o processo. Consulte o playbook de vendas vigente quando disponível. O padrão é `.agents/sales/playbook.md`. Scripts, matriz de objeções e regras de qualificação ficam junto dele.
 
 ## Perguntas que mudam a decisão
 

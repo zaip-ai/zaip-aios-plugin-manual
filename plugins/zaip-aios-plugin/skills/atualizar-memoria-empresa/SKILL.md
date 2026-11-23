@@ -1,19 +1,14 @@
 ---
 name: atualizar-memoria-empresa
-description: "Guarde um fato, encontre uma foto ou relatório, corrija a versão de um material ou atualize a memória empresarial da área. Crie a ficha se faltar."
+description: "Guarde um fato, encontre uma foto ou relatório, corrija a versão de um material ou atualize uma informação importante na fonte vigente da área."
 ---
 
 # Atualizar memória da empresa
 
-Para um documento empresarial ou ficha de memória, confira o [par Markdown e Word](./references/PARES.md) antes de usar a fonte. Ao salvar uma edição em qualquer lado, reconcilie o companheiro na mesma tarefa.
+Entregue planos e respostas pontuais na conversa por padrão. Salve um arquivo Markdown somente quando o usuário pedir, quando necessário para reutilização em outras tarefas ou quando a tarefa exigir alterar um arquivo existente; não crie arquivos de memória ou índice apenas para uma resposta pontual. Para planos, não crie Word por padrão: só produza se solicitado ou se for necessário ao entregável para leitura ou edição pela equipe. Brandbooks, manuais e relatórios podem justificar Word. Respeite os formatos pedidos; se alterar um par vigente, reconcilie seus formatos conforme o [procedimento de pares](./references/PARES.md).
 
-Para guardar ou encontrar algo, identifique primeiro a empresa e o objeto. A ficha geral `docs/zaip/empresa.md` guarda dados transversais. O [índice por assunto](./references/memoria.md) indica as nove rotas. Se houver um índice preparado em `docs/zaip/memoria.md`, siga os destinos adotados pela equipe.
+Para encontrar informação, identifique a empresa e consulte as fontes existentes da área pertinente conforme o [mapa por assunto](./references/memoria.md). Arquivos genéricos antigos podem ser consultados quando pertinentes, mas não são obrigatórios. Em consulta, apenas leia.
 
-Para uma nova ficha de área, crie a pasta em `.agents/<área>/` usando o nome indicado no índice.
+Para guardar, identifique se é um fato importante e duradouro necessário em outras tarefas ou se a pessoa pediu expressamente o registro. Busque primeiro uma fonte existente apropriada na pasta da área, como branding, design, marketing, growth ou operations. Atualize o trecho vigente, de forma concisa e com fonte, escopo e vigência conhecidos. Se nenhuma fonte servir e for necessário registrar, crie somente um arquivo específico na área responsável. Preserve conteúdo humano e trabalho concorrente. Se houver par vigente, reconcilie a alteração.
 
-1. Em uma consulta, abra a fonte vigente e cite o resultado. Para fotos, planos, itens de portfólio e relatórios, procure **Materiais vigentes** na ficha da área. Confira escopo, produto ou campanha, período e uso solicitado. Diante de dois candidatos plausíveis, mostre as diferenças. Diante de um arquivo inacessível, informe o que a ficha sustenta e qual verificação ficou pendente.
-2. Em um pedido de escrita, resolva a entrada uma vez no mesmo chat. Quando a ficha existente atender ao mesmo objeto, aplique `atualizar-memoria-empresa`. Quando faltar após conferir o destino e eventual Word já existente, aplique `criar-memoria-empresa`. A entrada que recebe a decisão já inicia o trabalho. Crie só a ficha necessária e o respectivo companheiro, na pasta autorizada. Preserve fontes locais já adotadas e caminhos protegidos.
-3. Para um fato ou decisão, guarde o assunto, o escopo, o conteúdo e a fonte. Indique vigência, responsável ou aprovador quando conhecidos. Para material reutilizável, confirme onde o original está salvo e registre **Material e escopo**, **Original ou par**, **Estado e vigência** e **Uso permitido e fonte**. Separe autorização de uso e aprovação editorial. Em uma ficha antiga, acrescente a seção que falta sem alterar as outras escolhas. Uma área dona e um ponteiro atendem às áreas que compartilham o material.
-4. No pedido de guardar, preserve o documento principal e identifique a referência. Numa edição do próprio material, atualize o destino pedido e confira depois o ponteiro. Se o mesmo original mudou de lugar e a identidade estiver demonstrada, atualize sua linha. Uma versão nova do mesmo item substitui a referência vigente. Conserve as variantes e períodos que continuam úteis. Releia a fonte, a ficha e seu Word. Sem mudança, preserve os arquivos e suas datas.
-
-A memória empresarial guarda o que a equipe voltará a usar. Chats, tentativas e sequências de tarefas ficam fora da ficha.
+Não crie índice geral, ficha genérica ou catálogo para cada entrega. Não duplique conversas, tentativas, planos pontuais ou conteúdos já acessíveis no original. Uma referência direta basta quando necessária. Preserve registros antigos e histórico; não apague nem migre automaticamente. Ao repetir pedido sem mudança, mantenha arquivos e datas. Informe onde foi registrado ou a fonte consultada.

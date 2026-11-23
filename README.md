@@ -1,6 +1,6 @@
 # ZAIP-AIOS Plugin
 
-Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.2.0 organiza as entregas por área em `.agents/`, incluindo os diagnósticos do Design System Maker.
+Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.3.0 entrega planos pontuais no chat. O plugin salva um arquivo quando você pede ou quando outra tarefa precisa reutilizá-lo.
 
 ## Instalar pelo agente
 
@@ -26,7 +26,7 @@ codex plugin add zaip-aios-plugin@zaip-manual
 codex plugin list --marketplace zaip-manual --json
 ```
 
-Confira na listagem a versão `1.2.0` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
+Confira na listagem a versão `1.3.0` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
 
 Em um projeto já preparado, peça **“Atualize os subagentes das equipes que já escolhi.”** O plugin reconhece os perfis padrão da 1.0.6 e preserva os personalizados. Abra um novo chat na pasta do projeto para usar os nomes atualizados nas próximas delegações.
 
@@ -54,4 +54,4 @@ No chat do projeto, envie `$zaip-aios-plugin:design-system-maker https://exemplo
 
 ## Onde ficam as entregas por área
 
-O plugin guarda novos materiais de área em `.agents/<área>/` e cria a pasta quando há conteúdo para salvar. Os nomes usados incluem `design`, `marketing`, `development`, `architecture`, `growth`, `operations`, `branding`, `sales`, `data`, `product` e `governance`. Código e configuração seguem a estrutura do projeto. O [índice de memória](plugins/zaip-aios-plugin/skills/entender-projeto/assets/manual/MEMORIA.md#onde-ler-e-onde-escrever) indica os destinos.
+O plugin guarda novos materiais de área em `.agents/<área>/` e cria a pasta quando há conteúdo para salvar. Os nomes usados incluem `design`, `marketing`, `development`, `architecture`, `growth`, `operations`, `branding`, `sales`, `data`, `product` e `governance`. Código e configuração seguem a estrutura do projeto. O [mapa de fontes por área](plugins/zaip-aios-plugin/skills/entender-projeto/assets/manual/MEMORIA.md#onde-ler-e-onde-escrever) indica os destinos. Guarde decisões duradouras diretamente na fonte da área. Word é indicado para entregáveis como Brandbooks, manuais e relatórios, conforme o pedido.

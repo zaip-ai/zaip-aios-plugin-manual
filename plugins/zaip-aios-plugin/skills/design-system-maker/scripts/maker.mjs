@@ -14,6 +14,7 @@ import { extract } from "./visual-url/runtime.mjs";
 import { hash } from "./visual-url/transport.mjs";
 
 const run = promisify(execFile);
+const outputRoot = ".agents/design/diagnosticos";
 const json = (value) => Buffer.from(`${JSON.stringify(value, null, 2)}\n`);
 const progress = (phase) => process.stderr.write(`[Design System Maker] ${phase}\n`);
 
@@ -98,9 +99,9 @@ async function make({ "--workspace": project, "--url": supplied }) {
     const evidence = json({ proposal, report, design_score: score, design_token_evidence: document.evidence });
     const stamp = new Date().toISOString().replace(/[:.]/g, "-");
     const host = new URL(proposal.source.url).hostname.replace(/[^a-z0-9.-]/gi, "-").slice(0, 50);
-    const parent = dirname(await path(workspace, "design/diagnosticos/_new", true));
+    const parent = dirname(await path(workspace, `${outputRoot}/_new`, true));
     const directory = await mkdtemp(join(parent, `${host}-${stamp}-`));
-    const folder = `design/diagnosticos/${basename(directory)}`;
+    const folder = `${outputRoot}/${basename(directory)}`;
     const artifacts = { "DESIGN.md": design, "diagnostico.pdf": pdf, "evidencias.json": evidence, "captura.png": screenshot };
     const files = {};
     for (const [name, bytes] of Object.entries(artifacts)) {

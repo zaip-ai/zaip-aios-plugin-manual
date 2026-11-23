@@ -5,6 +5,8 @@ description: "Escolha a pasta de memória da empresa pelo assunto e coordene dem
 
 # Coordenar um pedido com as perspectivas do ZAIP
 
+Ao salvar novos materiais, use a pasta da área responsável em `.agents/<área>/`, conforme o mapa abaixo. Crie a pasta quando houver uma entrega para guardar. Reutilize fontes existentes e siga a estrutura do projeto para código e configuração.
+
 Comece pelo resultado solicitado e pelo [mapa de memória por assunto](./references/manual/MEMORIA.md). No projeto preparado, abra `docs/zaip/memoria.md`, a ficha da área quando ela já existir e o original apontado em “Materiais vigentes”. A memória geral fica em `docs/zaip/empresa.md`. O índice cobre branding, design, marketing, vendas, growth, operações, desenvolvimento, arquitetura e dados. Os 23 perfis e seis squads estão no [manual da edição](./references/manual/INDICE.md).
 
 Para trabalhar no mesmo chat, siga as perguntas, a ordem e o entregável do guia da área desta versão. Ao salvar uma entrega reutilizável, registre o material na ficha da área mesmo que a estratégia continue igual. Confira o original, a vigência e as condições de uso. Guarde a decisão quando houver. Uma pergunta de leitura termina com a resposta e sua fonte. Se o projeto ainda não foi preparado, use as fontes existentes e o mapa incluído. Para configurar uma ou mais equipes ou retomar a escolha do próximo squad, aplique o roteiro de `entender-projeto` e use a seleção vigente da ficha da empresa.

@@ -33,6 +33,8 @@ Um pedido concreto pode seguir direto para a skill da tarefa. O [índice de mét
 
 ## Gravar o mínimo no projeto autorizado
 
+Crie novas pastas de área em `.agents/<área>/` conforme o [índice](./assets/manual/MEMORIA.md#onde-ler-e-onde-escrever), somente quando houver o que guardar. Mantenha código e configuração nos caminhos exigidos pelo projeto e reutilize fontes existentes. Ao atualizar um preparo anterior, inclua essa orientação se estiver ausente, preservando as regras da equipe.
+
 Confira os destinos e seus ancestrais antes da primeira escrita, inclusive os dois formatos de cada ficha e `.agents/zaip-free/pares/`. Respeite o tipo dos arquivos, instruções gerenciadas, links e junções. Uma instalação completa pode ser reconhecida por uma indicação inequívoca no cabeçalho de `AGENTS.md` ou pelo catálogo `.agents/config/agents/catalog.yaml` junto da configuração do framework. Instalação completa, destino protegido ou colisão de arquivo com diretório mantêm o preparo em leitura. Informe a evidência. Uma referência à ZAIP ou uma instalação anterior da Free, por si só, permitem integrar o que faltar.
 
 - Em um projeto novo, prepare `docs/zaip/empresa.md` com os dados conhecidos e `docs/zaip/memoria.md` com as nove rotas do [índice por assunto](./assets/manual/MEMORIA.md) e as fontes efetivamente adotadas. Mantenha exemplos e explicações extensas no plugin. Crie e confira os Word correspondentes. Crie `.agents/zaip-free/regras.md` com as [quatro regras](./assets/regras.md). Por último, integre o [trecho de orientação](./assets/agents-free.md) a `AGENTS.md`. Esses arquivos bastam para retomar a configuração.

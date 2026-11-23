@@ -7,6 +7,8 @@ description: Concilie um documento Markdown e seu Word editável no mesmo projet
 
 Abra `docs/zaip/memoria.md` e a ficha do assunto para localizar o documento vigente. Se a pessoa indicar um dos arquivos, derive o companheiro de mesmo nome-base e confira seu público e finalidade. Aplique o [procedimento de conciliação](./references/PARES.md).
 
+Mantenha os pares existentes na mesma pasta. Ao preparar um par novo de área sem destino adotado, guarde os dois arquivos juntos em `.agents/<área>/`.
+
 Execute a atualização no próprio chat usando os recursos locais de documentos e arquivos. Descubra primeiro qual lado mudou; quando não houver base comum e as versões divergirem, procure evidência antes de escolher. Em caso de conflito material, mostre os dois trechos e preserve os originais. Confirme no resultado o par de arquivos e a edição aplicada. Em modo de consulta, relate o estado sem gravar.
 
 ## Conferir conteúdo e mudanças

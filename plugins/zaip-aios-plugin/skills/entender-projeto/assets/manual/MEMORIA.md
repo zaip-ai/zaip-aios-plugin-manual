@@ -4,6 +4,8 @@ Use este índice para localizar a informação da empresa em outra conversa com 
 
 ## Onde ler e onde escrever
 
+Guarde novos materiais de área em `.agents/<área>/`, na pasta da ficha correspondente abaixo. Para as entregas específicas de produto e governança, use `.agents/product/` e `.agents/governance/`. Crie a pasta apenas quando houver material. Preserve as fontes existentes e os caminhos de código e configuração do projeto.
+
 1. Comece em `docs/zaip/empresa.md` para identificar a empresa, a oferta e o objetivo. Abra o mapa do projeto ou a ficha de canais quando existirem e forem pertinentes.
 2. Siga a rota abaixo e abra a fonte que a equipe adotou. Em tarefas que cruzam áreas, leia somente as envolvidas. Se o caminho adotado for outro, indique-o no índice local.
 3. Consulte na skill o método desta edição. Em projetos preparados com versões anteriores, preserve as personalizações em `.agents/zaip-free/manual/` e as fontes da equipe.

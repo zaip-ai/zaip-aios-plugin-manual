@@ -1,6 +1,6 @@
 # ZAIP-AIOS Plugin
 
-Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.1.0 inclui o Design System Maker para extrair um DESIGN.md e um diagnóstico em PDF a partir de uma URL.
+Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.2.0 organiza as entregas por área em `.agents/`, incluindo os diagnósticos do Design System Maker.
 
 ## Instalar pelo agente
 
@@ -26,7 +26,7 @@ codex plugin add zaip-aios-plugin@zaip-manual
 codex plugin list --marketplace zaip-manual --json
 ```
 
-Confira na listagem a versão `1.1.0` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
+Confira na listagem a versão `1.2.0` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
 
 Em um projeto já preparado, peça **“Atualize os subagentes das equipes que já escolhi.”** O plugin reconhece os perfis padrão da 1.0.6 e preserva os personalizados. Abra um novo chat na pasta do projeto para usar os nomes atualizados nas próximas delegações.
 
@@ -50,4 +50,8 @@ O agente informa em qual arquivo de instruções do Codex guardou a preferência
 
 ## Extrair o design system de um site
 
-No chat do projeto, envie `$zaip-aios-plugin:design-system-maker https://exemplo.com/`. Com Node 22.16 ou posterior e Chrome, Edge ou Chromium instalados, a skill abre a página em um perfil temporário e coleta uma amostra visual. Os arquivos `DESIGN.md`, `diagnostico.pdf` e as evidências ficam em uma nova pasta em `design/diagnosticos/`.
+No chat do projeto, envie `$zaip-aios-plugin:design-system-maker https://exemplo.com/`. Com Node 22.16 ou posterior e Chrome, Edge ou Chromium instalados, a skill abre a página em um perfil temporário e coleta uma amostra visual. Os arquivos `DESIGN.md`, `diagnostico.pdf` e as evidências ficam em uma nova pasta em `.agents/design/diagnosticos/`.
+
+## Onde ficam as entregas por área
+
+O plugin guarda novos materiais de área em `.agents/<área>/` e cria a pasta quando há conteúdo para salvar. Os nomes usados incluem `design`, `marketing`, `development`, `architecture`, `growth`, `operations`, `branding`, `sales`, `data`, `product` e `governance`. Código e configuração seguem a estrutura do projeto. O [índice de memória](plugins/zaip-aios-plugin/skills/entender-projeto/assets/manual/MEMORIA.md#onde-ler-e-onde-escrever) indica os destinos.

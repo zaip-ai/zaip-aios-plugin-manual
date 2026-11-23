@@ -1,6 +1,6 @@
 # ZAIP-AIOS Plugin
 
-Plugin com 203 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.0.9 permite escolher o ZAIP-AIOS como padrão para todos os projetos do perfil do Codex ou apenas para o projeto aberto.
+Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.0.10 adiciona o Design System Maker para extrair um DESIGN.md e um diagnóstico em PDF a partir de uma URL.
 
 ## Instalar pelo agente
 
@@ -26,7 +26,7 @@ codex plugin add zaip-aios-plugin@zaip-manual
 codex plugin list --marketplace zaip-manual --json
 ```
 
-Confira na listagem a versão `1.0.9` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
+Confira na listagem a versão `1.0.10` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
 
 Em um projeto já preparado, peça **“Atualize os subagentes das equipes que já escolhi.”** O plugin reconhece os perfis padrão da 1.0.6 e preserva os personalizados. Abra um novo chat na pasta do projeto para usar os nomes atualizados nas próximas delegações.
 
@@ -47,3 +47,7 @@ O agente informa em qual arquivo de instruções do Codex guardou a preferência
 **Para conferir**, abra um novo chat no mesmo projeto, sem selecionar o plugin, e pergunte **“Qual skill você usaria para criar um roteiro SPIN e de onde vem essa preferência?”** Confira se a resposta identifica `criar-roteiro-spin-selling` e o arquivo informado no preparo. Para conferir o escopo global, faça o teste em outro projeto do mesmo perfil.
 
 **Para remover**, diga **“Remova a preferência do ZAIP-AIOS só deste projeto”** ou **“Remova a preferência global do ZAIP-AIOS”**. A remoção preserva as outras instruções. Se a preferência existir nos dois escopos, a remoção local mantém a global em vigor.
+
+## Extrair o design system de um site
+
+No chat do projeto, envie `$zaip-aios-plugin:design-system-maker https://exemplo.com/`. Com Node 22.16 ou posterior e Chrome, Edge ou Chromium instalados, a skill abre a página em um perfil temporário e coleta uma amostra visual. Os arquivos `DESIGN.md`, `diagnostico.pdf` e as evidências ficam em uma nova pasta em `design/diagnosticos/`.

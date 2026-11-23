@@ -1,6 +1,6 @@
-# Catálogo de tarefas da edição Free 1.0.9
+# Catálogo de tarefas da edição Free 1.0.10
 
-São 203 entradas. Diga o resultado que precisa. Para preparar a empresa, o [guia inicial](./COMECE-AQUI.md) ajuda a escolher a primeira equipe. Para reencontrar uma entrega, siga o [índice de materiais por área](./MEMORIA.md). As entradas de criação e atualização verificam se o alvo existe. Os especialistas aplicam o papel escolhido no mesmo chat.
+São 204 entradas. Diga o resultado que precisa. Para preparar a empresa, o [guia inicial](./COMECE-AQUI.md) ajuda a escolher a primeira equipe. Para reencontrar uma entrega, siga o [índice de materiais por área](./MEMORIA.md). As entradas de criação e atualização verificam se o alvo existe. Os especialistas aplicam o papel escolhido no mesmo chat.
 
 ## Primeiro uso e coordenação · 5
 
@@ -79,10 +79,11 @@ São 203 entradas. Diga o resultado que precisa. Para preparar a empresa, o [gui
 - Reproduzir ou redesenhar uma interface — `redesenhar-interface`
 - Revisar prontidão de um site — `revisar-prontidao-site`
 
-## Design system · 3
+## Design system · 4
 
 - Atualizar guia de design system — `atualizar-guia-de-design-system`
 - Criar guia de design system — `criar-guia-de-design-system`
+- Extrair um design system de uma URL e gerar DESIGN.md e diagnóstico em PDF — `design-system-maker`
 - Organizar e aplicar um design system — `organizar-design-system`
 
 ## Estratégia e processo de marketing · 30

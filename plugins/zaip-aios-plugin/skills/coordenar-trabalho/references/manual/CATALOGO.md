@@ -1,6 +1,6 @@
 # Catálogo de tarefas da edição Free 1.2.0
 
-São 204 entradas. Diga o resultado que precisa. Para preparar a empresa, o [guia inicial](./COMECE-AQUI.md) ajuda a escolher a primeira equipe. Para reencontrar uma entrega, siga o [índice de materiais por área](./MEMORIA.md). As entradas de criação e atualização verificam se o alvo existe. Os especialistas aplicam o papel escolhido no mesmo chat.
+São 205 entradas. Diga o resultado que precisa. Para preparar a empresa, o [guia inicial](./COMECE-AQUI.md) ajuda a escolher a primeira equipe. Para reencontrar uma entrega, siga o [índice de materiais por área](./MEMORIA.md). As entradas de criação e atualização verificam se o alvo existe. Os especialistas aplicam o papel escolhido no mesmo chat.
 
 ## Primeiro uso e coordenação · 5
 
@@ -74,6 +74,7 @@ São 204 entradas. Diga o resultado que precisa. Para preparar a empresa, o [gui
 - Criar guia de design de produto — `criar-guia-de-design`
 - Criar imagem ou foto — `criar-imagem`
 - Criar uma landing page — `criar-landing-page`
+- Criar uma LP com o template padrão — `criar-lp-com-template-padrao`
 - Melhorar formulários de landing page — `melhorar-formulario-lp`
 - Otimizar um site de ponta a ponta — `otimizar-site`
 - Reproduzir ou redesenhar uma interface — `redesenhar-interface`

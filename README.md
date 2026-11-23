@@ -1,6 +1,6 @@
 # ZAIP-AIOS Plugin
 
-Plugin com 204 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.3.0 entrega planos pontuais no chat. O plugin salva um arquivo quando você pede ou quando outra tarefa precisa reutilizá-lo.
+Plugin com 205 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.3.1 inclui um template editorial para landing pages em Astro. Planos pontuais são entregues no chat. O plugin salva um arquivo quando você pede ou quando outra tarefa precisa reutilizá-lo.
 
 ## Instalar pelo agente
 
@@ -26,7 +26,7 @@ codex plugin add zaip-aios-plugin@zaip-manual
 codex plugin list --marketplace zaip-manual --json
 ```
 
-Confira na listagem a versão `1.3.0` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
+Confira na listagem a versão `1.3.1` ou posterior, com `installed: true` e `enabled: true`, e abra um novo chat. Se instalou pelo ZIP, atualize os arquivos do catálogo na mesma pasta permanente e execute novamente os comandos `plugin add` e `plugin list` acima.
 
 Em um projeto já preparado, peça **“Atualize os subagentes das equipes que já escolhi.”** O plugin reconhece os perfis padrão da 1.0.6 e preserva os personalizados. Abra um novo chat na pasta do projeto para usar os nomes atualizados nas próximas delegações.
 
@@ -51,6 +51,10 @@ O agente informa em qual arquivo de instruções do Codex guardou a preferência
 ## Extrair o design system de um site
 
 No chat do projeto, envie `$zaip-aios-plugin:design-system-maker https://exemplo.com/`. Com Node 22.16 ou posterior e Chrome, Edge ou Chromium instalados, a skill abre a página em um perfil temporário e coleta uma amostra visual. Os arquivos `DESIGN.md`, `diagnostico.pdf` e as evidências ficam em uma nova pasta em `.agents/design/diagnosticos/`.
+
+## Criar uma landing page com o template padrão
+
+Peça `$zaip-aios-plugin:criar-lp-com-template-padrao Crie uma LP na pasta campanha`. Para uma aplicação independente, use Node 24 e npm. O template inclui conteúdo de exemplo, fontes locais e navegação responsiva. A skill gera a página e orienta a testar a prévia local.
 
 ## Onde ficam as entregas por área
 

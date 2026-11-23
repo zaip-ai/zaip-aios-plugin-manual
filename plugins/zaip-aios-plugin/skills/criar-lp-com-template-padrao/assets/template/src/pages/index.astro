@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DotField from '../components/DotField.astro';
+import DetailsList from '../components/DetailsList';
+import { landing as lp } from '../data/landing';
+import '../styles/home.css';
+---
+<Layout>
+  <main id="conteudo" tabindex="-1">
+    <section class="hero" aria-labelledby="titulo">
+      <DotField />
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">{lp.hero.eyebrow}</p>
+          <h1 id="titulo">{lp.hero.title}<br /><em>{lp.hero.emphasis}</em></h1>
+          <p class="hero-subtitle">{lp.hero.subtitle}</p>
+          <ul class="hero-deck">{lp.hero.bullets.map(text => <li>{text}</li>)}</ul>
+          <div class="hero-actions">
+            <a class="btn-primary" href={lp.hero.primary.href}>{lp.hero.primary.label}</a>
+            <a class="btn-quiet" href={lp.hero.secondary.href}>{lp.hero.secondary.label}</a>
+          </div>
+        </div>
+        <div class="hero-portrait" aria-hidden="true"><div class="photo-frame"></div><span class="frame-corner"></span></div>
+      </div>
+    </section>
+    <section id="destaques" class="metric-section" aria-labelledby="destaques-titulo">
+      <div class="container">
+        <div class="section-line-title"><h2 id="destaques-titulo">Lorem ipsum</h2><span aria-hidden="true"></span></div>
+        <div class="metrics">{lp.highlights.map(item => (
+          <a class="metric" href={'#' + item.id}>
+            <p class="metric-label">{item.label}</p><p class="metric-value"><em>{item.value}</em></p><p class="metric-detail">{item.detail}</p>
+          </a>
+        ))}</div>
+      </div>
+    </section>
+    <section class="brand-section" aria-label="Faixa de destaques">
+      <div class="container brands-wrap"><p>Lorem ipsum dolor sit amet.</p><ul class="brand-list">{lp.strip.map(text => <li>{text}</li>)}</ul></div>
+    </section>
+    <section class="container cases section-spacing" id="detalhes" aria-labelledby="detalhes-titulo" tabindex="-1">
+      <div class="cases-intro"><p class="kicker">{lp.details.eyebrow}</p><h2 class="section-heading" id="detalhes-titulo">{lp.details.title} <em>{lp.details.emphasis}</em></h2><p>{lp.details.description}</p></div>
+      <DetailsList />
+    </section>
+    {lp.features.map((feature, index) => (
+      <section class={index === 0 ? 'book-section' : 'published-book'} id={feature.id} aria-labelledby={feature.id + '-titulo'}>
+        <div class="container book-grid">
+          {index === 0 && <div class="book-stage" aria-hidden="true"><div class="book-cover"></div></div>}
+          <div class="book-copy">
+            <p class="kicker">{feature.eyebrow}</p><h2 class="section-heading" id={feature.id + '-titulo'}>{feature.title} <em>{feature.emphasis}</em></h2>
+            <p class="book-subtitle">{feature.subtitle}</p><p>{feature.description}</p>
+            {index === 1 && <a class="btn-quiet" href="#saiba-mais">Saiba mais</a>}
+          </div>
+          {index > 0 && <div class="book-stage" aria-hidden="true"><div class="book-cover"></div></div>}
+        </div>
+      </section>
+    ))}
+    <section class="container resources section-spacing" id="recursos" aria-labelledby="recursos-titulo">
+      <div class="resources-heading"><p class="kicker">Lorem ipsum</p><h2 id="recursos-titulo" class="section-heading">Dolor sit <em>amet.</em></h2></div>
+      {lp.resources.map(item => <a class="resource-item" href={item.href}><span class="resource-icon" aria-hidden="true">↗</span><span><strong>{item.label}</strong><span>{item.description}</span></span></a>)}
+    </section>
+    <section class="contact-strip" id="saiba-mais" aria-labelledby="fim-titulo">
+      <div class="container contact-inner"><h2 id="fim-titulo">{lp.closing.title} <em>{lp.closing.emphasis}</em></h2><a class="btn-primary" href={lp.closing.href}>{lp.closing.label}</a></div>
+    </section>
+  </main>
+  <script>
+    function openLinkedPanel() {
+      const panel = document.getElementById(location.hash.slice(1));
+      if (panel instanceof HTMLDetailsElement && panel.classList.contains('case')) {
+        panel.open = true;
+        panel.querySelector('summary')?.focus({ preventScroll: true });
+        panel.scrollIntoView({ block: 'start' });
+      }
+    }
+    window.addEventListener('hashchange', openLinkedPanel);
+    document.querySelectorAll<HTMLAnchorElement>('a.metric').forEach(link => {
+      link.addEventListener('click', () => {
+        if (link.hash === location.hash) openLinkedPanel();
+      });
+    });
+    openLinkedPanel();
+  </script>
+</Layout>

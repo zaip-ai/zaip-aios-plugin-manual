@@ -1,0 +1,141 @@
+<div class="dot-field" data-dot-field aria-hidden="true">
+  <canvas width="1" height="1"></canvas>
+</div>
+
+<style>
+  .dot-field {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.48;
+    color: var(--accent, #3867f9);
+  }
+  .dot-field::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* Stagger alternate rows. The canvas follows the same 22px grid. */
+    background:
+      radial-gradient(circle at 11px 11px, currentColor 0.55px, transparent 1.05px) 0 0 / 22px 44px,
+      radial-gradient(circle at 11px 11px, currentColor 0.55px, transparent 1.05px) 11px 22px / 22px 44px;
+    mask-image:
+      radial-gradient(ellipse 46% 57% at 61% 6%, #000c, transparent),
+      radial-gradient(ellipse 40% 70% at 100% 63%, #000e, transparent),
+      radial-gradient(ellipse 58% 70% at 22% 108%, #000b, transparent),
+      linear-gradient(#0003, #0003);
+  }
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  @media (forced-colors: active) {
+    .dot-field { display: none; }
+  }
+</style>
+
+<script>
+  function enableDotField(field: HTMLElement) {
+    const canvas = field.querySelector('canvas');
+    const hero = field.parentElement;
+    const context = canvas?.getContext('2d');
+    if (!canvas || !context || !hero) return;
+
+    const motion = matchMedia('(any-hover: hover) and (any-pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none)');
+    const reach = 94;
+    const size = reach * 2;
+    const spacing = 22;
+    let frame = 0;
+    let lastTime = 0;
+    let intensity = 0;
+    let hovered = false;
+    let targetX = 0;
+    let targetY = 0;
+    let x = 0;
+    let y = 0;
+
+    const color = getComputedStyle(field).color;
+    const draw = (time: number) => {
+      frame = 0;
+      const elapsed = lastTime ? Math.min(time - lastTime, 64) : 16;
+      lastTime = time;
+      const ease = 1 - Math.exp(-elapsed / 60);
+      x += (targetX - x) * ease;
+      y += (targetY - y) * ease;
+      intensity += (Number(hovered) - intensity) * ease;
+      if (!hovered && intensity < 0.012) {
+        canvas.style.opacity = '0';
+        intensity = 0;
+        lastTime = 0;
+        return;
+      }
+
+      const left = Math.round(x - reach);
+      const top = Math.round(y - reach);
+      canvas.style.transform = `translate(${left}px, ${top}px)`;
+      canvas.style.opacity = '1';
+      context.clearRect(0, 0, size, size);
+      context.fillStyle = color;
+      const firstRow = Math.ceil((top - spacing / 2) / spacing);
+      for (let row = firstRow; spacing / 2 + row * spacing < top + size; row++) {
+        const dotY = spacing / 2 + row * spacing;
+        const offset = (row & 1) === 0 ? spacing / 2 : 0;
+        const firstX = offset + Math.ceil((left - offset) / spacing) * spacing;
+        for (let dotX = firstX; dotX < left + size; dotX += spacing) {
+          const proximity = Math.max(0, 1 - Math.hypot(dotX - x, dotY - y) / (reach - 4));
+          if (proximity === 0) continue;
+          const strength = proximity * proximity * (3 - 2 * proximity) * intensity;
+          context.globalAlpha = strength * 0.85;
+          context.beginPath();
+          context.arc(dotX - left, dotY - top, 0.8 + 1.4 * strength, 0, 2 * Math.PI);
+          context.fill();
+        }
+      }
+      if (Math.abs(x - targetX) + Math.abs(y - targetY) > 0.1 || Math.abs(Number(hovered) - intensity) > 0.01) {
+        frame = requestAnimationFrame(draw);
+      } else {
+        lastTime = 0;
+      }
+    };
+
+    function fade() {
+      if (!hovered) return;
+      hovered = false;
+      if (!frame) frame = requestAnimationFrame(draw);
+    }
+
+    hero.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'touch' || !motion.matches) return;
+      const bounds = field.getBoundingClientRect();
+      targetX = event.clientX - bounds.left;
+      targetY = event.clientY - bounds.top;
+      if (!hovered && !intensity) {
+        x = targetX;
+        y = targetY;
+        const pixels = Math.round(size * Math.min(window.devicePixelRatio || 1, 2));
+        if (canvas.width !== pixels) {
+          canvas.width = canvas.height = pixels;
+          canvas.style.width = canvas.style.height = size + 'px';
+          context.setTransform(pixels / size, 0, 0, pixels / size, 0, 0);
+        }
+      }
+      hovered = true;
+      if (!frame) frame = requestAnimationFrame(draw);
+    }, { passive: true });
+    hero.addEventListener('pointerleave', fade);
+    hero.addEventListener('pointercancel', fade);
+    window.addEventListener('scroll', fade, { passive: true });
+    motion.addEventListener('change', () => {
+      if (motion.matches) return;
+      cancelAnimationFrame(frame);
+      frame = lastTime = intensity = 0;
+      hovered = false;
+      canvas.style.opacity = '0';
+    });
+  }
+  const field = document.querySelector<HTMLElement>('[data-dot-field]');
+  if (field) enableDotField(field);
+</script>

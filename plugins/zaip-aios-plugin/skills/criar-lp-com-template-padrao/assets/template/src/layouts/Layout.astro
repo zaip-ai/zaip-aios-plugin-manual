@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import { landing } from '../data/landing';
+
+const menu = [
+  { label: 'Destaques', href: '#destaques' },
+  { label: 'Detalhes', href: '#detalhes' },
+  { label: 'Recursos', href: '#recursos' },
+  { label: 'Saiba mais', href: '#saiba-mais' },
+];
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0e17" />
+    <meta name="robots" content="noindex, follow" />
+    <title>{landing.title}</title>
+    <meta name="description" content={landing.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={landing.title} />
+    <meta property="og:description" content={landing.description} />
+    <link rel="icon" href="data:," />
+  </head>
+  <body id="topo">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="masthead">
+      <div class="container mast-inner">
+        <a class="brand" href="#topo">{landing.brand}</a>
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          {menu.map(item => <a href={item.href} class:list={[item.href === '#saiba-mais' && 'contact-btn']}>{item.label}</a>)}
+        </nav>
+        <details class="mobile-nav">
+          <summary aria-label="Menu de navegação"><span class="menu-icon" aria-hidden="true"></span></summary>
+          <nav aria-label="Navegação móvel">
+            {menu.map(item => <a href={item.href}>{item.label}</a>)}
+          </nav>
+        </details>
+      </div>
+    </header>
+    <slot />
+    <footer class="footer">
+      <div class="container foot-inner">
+        <a class="brand" href="#topo">{landing.brand}</a>
+        <span class="foot-caption">{landing.description}</span>
+        <nav aria-label="Rodapé"><a href="#detalhes">Ver detalhes</a><a href="#topo">Voltar ao topo</a></nav>
+      </div>
+    </footer>
+    <script>
+      const menu = document.querySelector<HTMLDetailsElement>('.mobile-nav');
+      menu?.querySelector('nav')?.addEventListener('click', () => { menu.open = false; });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu?.open) {
+          menu.open = false;
+          menu.querySelector('summary')?.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false;
+      });
+    </script>
+  </body>
+</html>

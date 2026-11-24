@@ -58,7 +58,7 @@ Peça `$zaip-aios-plugin:configurar-meta-ads-mcp-no-chatgpt Configure o Meta Ads
 
 ## Configurar o Google Ads no ChatGPT
 
-Peça `$zaip-aios-plugin:configurar-google-ads-mcp-no-chatgpt Configure a leitura e a edição de campanhas do Google Ads no meu workspace.` A skill verifica as integrações existentes, orienta o cadastro do AdKit e mostra como testar a edição em rascunho.
+Peça `$zaip-aios-plugin:configurar-google-ads-mcp-no-chatgpt Configure o Google Ads no meu ChatGPT Site.` A skill reutiliza o plugin MCP gerado pelo Sites e orienta o cadastro da URI de retorno do Google, o login e a verificação das ferramentas disponíveis. Para uso exclusivo no Codex local, também há instruções para o MCP oficial do Google.
 
 ## Criar uma landing page com o template padrão
 

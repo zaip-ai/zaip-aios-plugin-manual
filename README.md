@@ -1,6 +1,6 @@
 # ZAIP-AIOS Plugin
 
-Plugin com 206 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.3.1 inclui um template editorial para landing pages em Astro. Planos pontuais são entregues no chat. O plugin salva um arquivo quando você pede ou quando outra tarefa precisa reutilizá-lo.
+Plugin com 207 skills em português e 23 subagentes para desenvolvimento, design, marketing, vendas, growth e operações. A versão 1.3.1 inclui um template editorial para landing pages em Astro. Planos pontuais são entregues no chat. O plugin salva um arquivo quando você pede ou quando outra tarefa precisa reutilizá-lo.
 
 ## Instalar pelo agente
 
@@ -55,6 +55,10 @@ No chat do projeto, envie `$zaip-aios-plugin:design-system-maker https://exemplo
 ## Configurar o Meta Ads MCP no ChatGPT
 
 Peça `$zaip-aios-plugin:configurar-meta-ads-mcp-no-chatgpt Configure o Meta Ads MCP – Gestão ZAIP-AIOS no meu workspace.` O agente usa Computer Use na sua aba autenticada, cadastra o servidor da Meta com o ícone incluído na skill e para em **Conectar** para você autorizar o Facebook.
+
+## Configurar o Google Ads no ChatGPT
+
+Peça `$zaip-aios-plugin:configurar-google-ads-mcp-no-chatgpt Configure a leitura e a edição de campanhas do Google Ads no meu workspace.` A skill verifica as integrações existentes, orienta o cadastro do AdKit e mostra como testar a edição em rascunho.
 
 ## Criar uma landing page com o template padrão
 

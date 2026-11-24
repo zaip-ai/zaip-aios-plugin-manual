@@ -1,6 +1,6 @@
 # Catálogo de tarefas da edição Free 1.2.0
 
-São 205 entradas. Diga o resultado que precisa. Para preparar a empresa, o [guia inicial](./COMECE-AQUI.md) ajuda a escolher a primeira equipe. Para reencontrar uma entrega, siga o [índice de materiais por área](./MEMORIA.md). As entradas de criação e atualização verificam se o alvo existe. Os especialistas aplicam o papel escolhido no mesmo chat.
+São 206 entradas. Diga o resultado que precisa. Para preparar a empresa, o [guia inicial](./COMECE-AQUI.md) ajuda a escolher a primeira equipe. Para reencontrar uma entrega, siga o [índice de materiais por área](./MEMORIA.md). As entradas de criação e atualização verificam se o alvo existe. Os especialistas aplicam o papel escolhido no mesmo chat.
 
 ## Primeiro uso e coordenação · 5
 
@@ -204,7 +204,7 @@ São 205 entradas. Diga o resultado que precisa. Para preparar a empresa, o [gui
 - Executar testes de qualidade da entrega — `executar-qa-entrega`
 - Planejar uma mudança — `planejar-mudanca`
 
-## Central de canais e operações omnichannel · 20
+## Central de canais e operações omnichannel · 21
 
 - Conectar CRM ao projeto — `conectar-crm`
 - Conectar uma caixa de e-mail — `conectar-email`
@@ -213,6 +213,7 @@ São 205 entradas. Diga o resultado que precisa. Para preparar a empresa, o [gui
 - Conectar Google Ads por MCP ou API — `conectar-google-ads`
 - Conectar Instagram profissional — `conectar-instagram`
 - Conectar Meta Ads por MCP ou API — `conectar-meta-ads`
+- Cadastrar o Meta Ads MCP – Gestão ZAIP-AIOS no ChatGPT pelo navegador — `configurar-meta-ads-mcp-no-chatgpt`
 - Conectar um serviço por API, MCP ou plugin — `conectar-servico-api-mcp`
 - Conectar um canal do YouTube — `conectar-youtube`
 - Configurar a central de canais — `configurar-central-omnichannel`
